@@ -33,7 +33,7 @@ namespace Elasticsearch.Net.Connection
 			//On error responses, so lets up the ante.
 
 			//Not available under mono
-			if (Type.GetType("Mono.Runtime") == null)
+			if (Type.GetType("Mono.Runtime") == null && Type.GetType("System.MonoType") == null)
 				HttpWebRequest.DefaultMaximumErrorResponseLength = -1;
 		}
 
